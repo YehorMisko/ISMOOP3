@@ -131,19 +131,16 @@ namespace OOP3
         }
         public static Fraction operator -(Fraction fract1)
         {
-            fract1.Denominator = -fract1.Denominator;
-            fract1.Numerator = -fract1.Numerator;
-            return fract1;
+            Fraction fract2 = new Fraction(-fract1.Numerator, fract1.Denominator);
+            return fract2;
         }
         public static Fraction operator +(Fraction fract1)
         {
-            fract1.Denominator = +fract1.Denominator;
-            fract1.Numerator = +fract1.Numerator;
             return fract1;
         }
         public static explicit operator double(Fraction fract1)
         {
-            return fract1.Numerator * 1.0d / fract1.Denominator * 1.0d;
+            return fract1.Numerator * 1.0d / fract1.Denominator;
         }
         public void ReduceFraction()
         {
