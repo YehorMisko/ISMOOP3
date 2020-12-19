@@ -52,6 +52,7 @@ namespace OOP3
             int num1 = fract1.Numerator * (Den / fract1.Denominator);
             int num2 = fract2.Numerator * (Den / fract2.Denominator);
             Fraction res = new Fraction((num1 + num2), Den);
+            res.ReduceFraction();
             return res;
         }
         public static Fraction operator -(Fraction fract1, Fraction fract2)
@@ -61,18 +62,21 @@ namespace OOP3
             int num1 = fract1.Numerator * (Den / fract1.Denominator);
             int num2 = fract2.Numerator * (Den / fract2.Denominator);
             Fraction res = new Fraction((num1 - num2), Den);
+            res.ReduceFraction();
             return res;
         }
         public static Fraction operator *(Fraction fract1, Fraction fract2)
         {
             Fraction res = new Fraction((fract1.Numerator * fract2.Numerator),
                 (fract1.Denominator * fract2.Denominator));
+            res.ReduceFraction();
             return res;
         }
         public static Fraction operator /(Fraction fract1, Fraction fract2)
         {
             Fraction res = new Fraction((fract1.Numerator * fract2.Denominator),
                 (fract1.Denominator * fract2.Numerator));
+            res.ReduceFraction();
             return res;
         }
         public static bool operator >(Fraction fract1, Fraction fract2)
